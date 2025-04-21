@@ -3,10 +3,8 @@ import {
     Calendar,
     Code,
     Database,
-    Globe,
     Layers,
     Server,
-    Smartphone,
   } from "lucide-react"
   
   export default function Experience() {
