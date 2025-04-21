@@ -50,7 +50,7 @@ import {
             </div>
             <h2 className="text-4xl font-bold text-white mb-4">Experience & Tech Stack</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              A timeline of my career and the technologies I've grown to love and master.
+              A timeline of my career and the technologies I have grown to love and master.
             </p>
           </div>
   
