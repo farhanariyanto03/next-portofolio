@@ -58,7 +58,7 @@ export default function EnhancedHero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-//   const skills = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Laravel"];
+  //   const skills = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Laravel"];
 
   return (
     <motion.section
@@ -304,19 +304,19 @@ export default function EnhancedHero() {
                     <span className="code-variable">skills</span> = [
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="code-string">"React"</span>,
+                    <span className="code-string">&quot;React&quot;</span>,
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="code-string">"Next.js"</span>,
+                    <span className="code-string">&quot;Next.js&quot;</span>,
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="code-string">"TypeScript"</span>,
+                    <span className="code-string">&quot;TypeScript&quot;</span>,
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="code-string">"Node.js"</span>
+                    <span className="code-string">&quot;Node.js&quot;</span>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="code-string">"Laravel"</span>
+                    <span className="code-string">&quot;Laravel&quot;</span>
                     <br />
                     &nbsp;&nbsp;];
                     <br />
@@ -328,11 +328,11 @@ export default function EnhancedHero() {
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="code-attribute">name</span>=
-                    <span className="code-string">"Farhan Ariyanto"</span>
+                    <span className="code-string">&quot;Farhan Ariyanto&quot;</span>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="code-attribute">passion</span>=
-                    <span className="code-string">"Web Development"</span>
+                    <span className="code-string">&quot;Web Development&quot;</span>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="code-attribute">available</span>=
