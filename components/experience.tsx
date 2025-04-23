@@ -1,7 +1,6 @@
 "use client";
 
 import { Briefcase, Calendar, Code } from "lucide-react";
-import { useRef } from "react";
 // import ScrollVelocity from "@/ui/variable-proximity";
 
 export default function Experience() {

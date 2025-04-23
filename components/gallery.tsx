@@ -1,5 +1,4 @@
 import RollingGallery from "@/ui/roolling_gallery";
-import Image from "next/image";
 
 const Gallery = () => {
   return (
