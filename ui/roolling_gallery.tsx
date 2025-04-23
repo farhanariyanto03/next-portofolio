@@ -36,11 +36,12 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   // Use default images if none are provided
   const galleryImages = images.length > 0 ? images : IMGS;
 
-  const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(
-    window.innerWidth <= 640
-  );
+  const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(false);
+
   useEffect(() => {
     const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
+    handleResize(); 
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -155,7 +156,9 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               className="group absolute flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden] md:p-[6%]"
               style={{
                 width: `${faceWidth}px`,
-                transform: `rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
+                transform: `rotateY(${
+                  (360 / faceCount) * i
+                }deg) translateZ(${radius}px)`,
               }}
             >
               <img
