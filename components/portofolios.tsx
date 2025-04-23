@@ -34,9 +34,12 @@ export default function Portfolio() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-950/30 to-slate-950/30">
+    <section className="py-20 bg-gradient-to-b from-purple-950/30 to-blue-950/30">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1 border border-purple-500 text-purple-400 rounded-full text-sm mb-4">
+            Portofolio
+          </span>
           <h2 className="text-4xl font-bold text-white mb-4">My Projects</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A selection of projects that showcase my experience in web

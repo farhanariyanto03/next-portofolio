@@ -77,9 +77,9 @@ export default function EnhancedHero() {
           className="absolute inset-0 opacity-30"
           style={{
             background: `radial-gradient(circle at ${
-              50 + mousePosition.x * 30
+              50 + mousePosition.x * 90
             }% ${
-              50 + mousePosition.y * 30
+              50 + mousePosition.y * 80
             }%, rgba(139, 92, 246, 0.5) 0%, transparent 50%)`,
           }}
         />
@@ -158,7 +158,7 @@ export default function EnhancedHero() {
       </div>
 
       {/* Main content with enhanced glass effect */}
-      <div className="container relative z-10 px-10 mx-auto">
+      <div className="container relative z-10 px-7 mx-auto">
         <div className="grid lg:grid-cols-5 gap-8 items-center">
           {/* Left side content */}
           <motion.div
@@ -351,7 +351,7 @@ export default function EnhancedHero() {
               {/* Floating badges */}
               <motion.div
                 className="absolute -top-4 -right-4 bg-gradient-to-br from-purple-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -20, 0], x: [0, -20, 0] }}
                 transition={{
                   duration: 3,
                   repeat: Number.POSITIVE_INFINITY,
@@ -363,7 +363,7 @@ export default function EnhancedHero() {
 
               <motion.div
                 className="absolute -bottom-4 -left-4 bg-gradient-to-br from-blue-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
-                animate={{ y: [0, 10, 0] }}
+                animate={{ y: [0, 20, 0], x: [0, 20, 0] }}
                 transition={{
                   duration: 4,
                   repeat: Number.POSITIVE_INFINITY,

@@ -3,6 +3,7 @@ import Hero from "@/components/hero"
 import Experience from "@/components/experience"
 import Certificates from "@/components/certificates"
 import Portfolio from "@/components/portofolios"
+import Gallery from "@/components/gallery";
 import Footer from "@/components/footer"
 
 export default function Home() {
@@ -20,6 +21,9 @@ export default function Home() {
       </section>
       <section id="portfolio">
         <Portfolio />
+      </section>
+      <section id="gallery">
+        <Gallery />
       </section>
       <section id="contact">
         <Footer />
