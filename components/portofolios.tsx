@@ -24,7 +24,7 @@ export default function Portfolio() {
       title: "J-KOST",
       description:
         "J-Kost is a platform providing boarding house services in the Jember area which is website-based.",
-      image: "/project/jkost1.png",
+      image: "/project/JKOST1.png",
       tech: ["PHP", "Bootstrap", "JavaScript", "MySQL"],
       demo: "#",
       github: "#",
