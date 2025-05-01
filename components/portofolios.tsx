@@ -87,13 +87,7 @@ export default function Portfolio() {
       description:
         "Justplay Corporate is a creative studio platform engaged in 3D animation, game development, and website creation. We provide visual solutions and interactive technology for various industries, from entertainment, education, marketing, to business.",
       image: "/project/justplay1.png",
-      tech: [
-        "Laravel",
-        "Tailwind CSS",
-        "JavaScript",
-        "JQuery",
-        "MySQL",
-      ],
+      tech: ["Laravel", "Tailwind CSS", "JavaScript", "JQuery", "MySQL"],
       demo: "#",
       github: "#",
     },
@@ -102,13 +96,7 @@ export default function Portfolio() {
       description:
         "Tr Express is a shipping platform that provides a trusted solution for your website-based shipping needs.",
       image: "/project/trexpress1.png",
-      tech: [
-        "Laravel",
-        "Tailwind CSS",
-        "JavaScript",
-        "JQuery",
-        "MySQL",
-      ],
+      tech: ["Laravel", "Tailwind CSS", "JavaScript", "JQuery", "MySQL"],
       demo: "#",
       github: "#",
     },

@@ -22,11 +22,31 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", href: "/", icon: <Home size={16} className="mr-2" /> },
-    { name: "Experience", href: "/experience", icon: <Briefcase size={16} className="mr-2" /> },
-    { name: "Certificates", href: "/certificates", icon: <Award size={16} className="mr-2" /> },
-    { name: "Portfolio", href: "/portfolio", icon: <Folder size={16} className="mr-2" /> },
-    { name: "Gallery", href: "/gallery", icon: <Folder size={16} className="mr-2" /> },
-    { name: "Contact", href: "/contact", icon: <Mail size={16} className="mr-2" /> },
+    {
+      name: "Experience",
+      href: "/experience",
+      icon: <Briefcase size={16} className="mr-2" />,
+    },
+    {
+      name: "Certificates",
+      href: "/certificates",
+      icon: <Award size={16} className="mr-2" />,
+    },
+    {
+      name: "Portfolio",
+      href: "/portfolio",
+      icon: <Folder size={16} className="mr-2" />,
+    },
+    {
+      name: "Gallery",
+      href: "/gallery",
+      icon: <Folder size={16} className="mr-2" />,
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+      icon: <Mail size={16} className="mr-2" />,
+    },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -42,9 +62,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        scrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
