@@ -22,11 +22,10 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", href: "/", icon: <Home size={16} className="mr-2" /> },
-    { name: "About", href: "/about", icon: <User size={16} className="mr-2" /> },
-    { name: "Services", href: "/services", icon: <Layers size={16} className="mr-2" /> },
-    { name: "Portfolio", href: "/portfolio", icon: <Folder size={16} className="mr-2" /> },
     { name: "Experience", href: "/experience", icon: <Briefcase size={16} className="mr-2" /> },
     { name: "Certificates", href: "/certificates", icon: <Award size={16} className="mr-2" /> },
+    { name: "Portfolio", href: "/portfolio", icon: <Folder size={16} className="mr-2" /> },
+    { name: "Gallery", href: "/gallery", icon: <Folder size={16} className="mr-2" /> },
     { name: "Contact", href: "/contact", icon: <Mail size={16} className="mr-2" /> },
   ];
 

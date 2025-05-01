@@ -75,7 +75,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-purple-400 transition-colors"
                 >
-                  About Me
+                  Experience
                 </Link>
               </li>
               <li>
@@ -83,7 +83,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-purple-400 transition-colors"
                 >
-                  Services
+                  Certificates
                 </Link>
               </li>
               <li>
@@ -99,7 +99,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-purple-400 transition-colors"
                 >
-                  Blog
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -120,18 +120,18 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-purple-500 mr-3 mt-0.5" />
                 <span className="text-gray-400">
-                  123 Developer Street
+                  Probolinggo, East Java
                   <br />
-                  San Francisco, CA 94107
+                  Jl. Ikan Paus, Mayangan
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-purple-500 mr-3" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+62 852 3366 1118</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-purple-500 mr-3" />
-                <span className="text-gray-400">hello@johndoe.dev</span>
+                <span className="text-gray-400">ariyantofarhan03@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -159,11 +159,11 @@ export default function Footer() {
 
         <div className="border-t border-purple-900/50 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+            &copy; {new Date().getFullYear()} Farhanayanto. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm mt-2 md:mt-0">
             Designed and built with <span className="text-purple-500">♥</span>{" "}
-            by John Doe
+            by Farhan Ariyanto
           </p>
         </div>
       </div>

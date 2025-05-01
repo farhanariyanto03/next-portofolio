@@ -5,29 +5,110 @@ import { ExternalLink } from "lucide-react";
 export default function Portfolio() {
   const projects = [
     {
-      title: "Nutrition & IMT Calculator",
+      title: "SIMKO",
       description:
-        "Responsive calculator for BMI and nutrition levels based on gender, height, and weight.",
-      image: "/Juara Hackathon UM.jpg",
-      tech: ["HTML", "Bootstrap", "JavaScript"],
+        "Simko is a desktop-based boarding house management information system.",
+      image: "/project/simko1.png",
+      tech: ["JAVA", "MySQL"],
       demo: "#",
       github: "#",
     },
     {
-      title: "Nutrition & IMT Calculator",
+      title: "SIOPET",
       description:
-        "Responsive calculator for BMI and nutrition levels based on gender, height, and weight.",
-      image: "/Juara Hackathon UM.jpg",
-      tech: ["HTML", "Bootstrap", "JavaScript"],
+        "Siopet is a desktop-based Hola Petcare management information system.",
+      image: "/project/siopet1.png",
+      tech: ["JAVA", "MySQL"],
       demo: "#",
       github: "#",
     },
     {
-      title: "Nutrition & IMT Calculator",
+      title: "J-KOST",
       description:
-        "Responsive calculator for BMI and nutrition levels based on gender, height, and weight.",
-      image: "/Juara Hackathon UM.jpg",
-      tech: ["HTML", "Bootstrap", "JavaScript"],
+        "J-Kost is a platform providing boarding house services in the Jember area which is website-based.",
+      image: "/project/jkost1.png",
+      tech: ["PHP", "Bootstrap", "JavaScript", "MySQL"],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "GAMESTORE",
+      description:
+        "Gamestore is a platform that provides mobile legend account jockey services and game diamond top ups based on a website.",
+      image: "/project/gamestore1.png",
+      tech: ["Laravel", "Tailwind CSS", "JavaScript", "MySQL"],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "DONASI UKT",
+      description:
+        "UKT Donation is a platform for educational institutions where they can make donations to those who need help and are also supported by SPK.",
+      image: "/project/donasiukt1.png",
+      tech: [
+        "Laravel",
+        "Tailwind CSS",
+        "JavaScript",
+        "Leaflet",
+        "JQuery",
+        "MySQL",
+      ],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "PREDIKSI GRADE KENTANG MENGGUNAKAN METODE KNN",
+      description:
+        "Kentir is a platform for predicting potato size, which contains data that has been processed with classification using the KNN method.",
+      image: "/project/kentir1.png",
+      tech: ["Python", "HTML", "Firebase"],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "SMART MITIGATION",
+      description:
+        "Smart Mitigation is a platform for predicting floods where there are several methods for predicting floods themselves using the Random Forest method, for mapping areas that will experience flooding using the Clustering/K-Means method, and there is also a chatbot that will provide information about disaster victims using the NLP method.",
+      image: "/project/mitigation1.png",
+      tech: [
+        "Python",
+        "Flask",
+        "Laravel",
+        "Leaflet",
+        "JQuery",
+        "Tailwind CSS",
+        "MySQL",
+      ],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "JUSPLAY CORPORATE",
+      description:
+        "Justplay Corporate is a creative studio platform engaged in 3D animation, game development, and website creation. We provide visual solutions and interactive technology for various industries, from entertainment, education, marketing, to business.",
+      image: "/project/justplay1.png",
+      tech: [
+        "Laravel",
+        "Tailwind CSS",
+        "JavaScript",
+        "JQuery",
+        "MySQL",
+      ],
+      demo: "#",
+      github: "#",
+    },
+    {
+      title: "TR EXPRESS",
+      description:
+        "Tr Express is a shipping platform that provides a trusted solution for your website-based shipping needs.",
+      image: "/project/trexpress1.png",
+      tech: [
+        "Laravel",
+        "Tailwind CSS",
+        "JavaScript",
+        "JQuery",
+        "MySQL",
+      ],
       demo: "#",
       github: "#",
     },
@@ -37,7 +118,7 @@ export default function Portfolio() {
     <section className="py-20 bg-gradient-to-b from-purple-950/30 to-blue-950/30">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
-        <span className="inline-block px-4 py-1 border border-purple-500 text-purple-400 rounded-full text-sm mb-4">
+          <span className="inline-block px-4 py-1 border border-purple-500 text-purple-400 rounded-full text-sm mb-4">
             Portofolio
           </span>
           <h2 className="text-4xl font-bold text-white mb-4">My Projects</h2>
@@ -78,7 +159,7 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                {/* <div className="flex gap-4">
                   <Link
                     href={project.demo}
                     className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center"
@@ -91,7 +172,7 @@ export default function Portfolio() {
                   >
                     GitHub <ExternalLink className="h-4 w-4 ml-1" />
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
