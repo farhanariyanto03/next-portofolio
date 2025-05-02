@@ -5,10 +5,10 @@ import Link from "next/link"
 export default function Certificates() {
   const certificates = [
     {
-      title: "Finalist Hackathon - National Competition HackFest 2025 UC",
+      title: "Finalist Hackathon - National Competition HackFest UC",
       issuer: "Interaction Design Foundation",
       date: "April 2025",
-      image: "",
+      image: "/hackfest.jpg",
       link: "#",
     },
     {
