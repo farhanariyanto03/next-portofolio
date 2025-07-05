@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import {
   motion,
   useMotionValue,
@@ -31,34 +31,31 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   pauseOnHover = false,
   images = [],
 }) => {
+  // Use default images if none are provided
   const galleryImages = images.length > 0 ? images : IMGS;
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 640);
+    const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
     handleResize();
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const faceCount = galleryImages.length;
+  // 3D geometry calculations
+  const cylinderWidth: number = isScreenSizeSm ? 1100 : 1800;
+  const faceCount: number = galleryImages.length;
+  const faceWidth: number = (cylinderWidth / faceCount) * 1.5;
+  const radius: number = cylinderWidth / (2 * Math.PI);
 
-  // Responsive values using useMemo for performance
-  const { cylinderWidth, faceWidth, radius } = useMemo(() => {
-    const baseWidth = isMobile ? 800 : 1800;
-    const faceW = isMobile ? 160 : (baseWidth / faceCount) * 1.5;
-    const r = faceW / (2 * Math.tan(Math.PI / faceCount));
-    return {
-      cylinderWidth: baseWidth,
-      faceWidth: faceW,
-      radius: r,
-    };
-  }, [isMobile, faceCount]);
-
-  const dragFactor = 0.05;
+  // Framer Motion values and controls
+  const dragFactor: number = 0.05;
   const rotation = useMotionValue(0);
   const controls = useAnimation();
+
+  // Create a 3D transform based on the rotation motion value
   const transform = useTransform(
     rotation,
     (val: number) => `rotate3d(0,1,0,${val}deg)`
@@ -118,8 +115,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[500px] sm:h-[400px] w-full overflow-hidden">
-      {/* Left & right fade for style */}
+    <div className="relative h-[500px] w-full overflow-hidden">
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
@@ -134,7 +130,6 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
             "linear-gradient(to right, rgba(0,0,0,0) 0%, #060606 100%)",
         }}
       />
-
       <div className="flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
         <motion.div
           drag="x"
@@ -156,7 +151,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
           {galleryImages.map((url, i) => (
             <div
               key={i}
-              className="group absolute flex h-fit items-center justify-center p-[8%] sm:p-[4%] [backface-visibility:hidden]"
+              className="group absolute flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden] md:p-[6%]"
               style={{
                 width: `${faceWidth}px`,
                 transform: `rotateY(${
@@ -167,7 +162,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               <img
                 src={url}
                 alt="gallery"
-                className="pointer-events-none h-[220px] w-[300px] sm:h-[150px] sm:w-[200px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                className="pointer-events-none h-[220px] w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[170px] sm:w-[220px]"
               />
             </div>
           ))}
