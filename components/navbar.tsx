@@ -11,30 +11,30 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const links = [
-    { name: "Home", href: "/", icon: <Home size={16} className="mr-2" /> },
+    { name: "Home", href: "#home", icon: <Home size={16} className="mr-2" /> },
     {
       name: "Experience",
-      href: "/experience",
+      href: "#experience",
       icon: <Briefcase size={16} className="mr-2" />,
     },
     {
       name: "Certificates",
-      href: "/certificates",
+      href: "#certificates",
       icon: <Award size={16} className="mr-2" />,
     },
     {
       name: "Portfolio",
-      href: "/portfolio",
+      href: "#portfolio",
       icon: <Folder size={16} className="mr-2" />,
     },
     {
       name: "Gallery",
-      href: "/gallery",
+      href: "#gallery",
       icon: <Folder size={16} className="mr-2" />,
     },
     {
       name: "Contact",
-      href: "/contact",
+      href: "#contact",
       icon: <Mail size={16} className="mr-2" />,
     },
   ];
