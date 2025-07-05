@@ -2,15 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Home,
-  Briefcase,
-  Folder,
-  Award,
-  Mail,
-  X,
-  Menu,
-} from "lucide-react";
+import { Home, Briefcase, Folder, Award, Mail, X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -56,6 +48,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Cegah scroll saat mobile menu terbuka
+    document.body.style.overflow = open ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   return (
     <nav
