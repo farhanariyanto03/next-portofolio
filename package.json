@@ -12,7 +12,7 @@
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
     "framer-motion": "^12.7.4",
-    "gsap": "^3.12.7",
+    "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.503.0",
     "motion": "^12.7.4",

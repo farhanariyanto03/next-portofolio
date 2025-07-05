@@ -157,14 +157,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-purple-900/50 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-purple-900/50 mt-12 pt-6 flex flex-col md:flex-row justify-center items-center">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Farhanayanto. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm mt-2 md:mt-0">
+          {/* <p className="text-gray-500 text-sm mt-2 md:mt-0">
             Designed and built with <span className="text-purple-500">♥</span>{" "}
             by Farhan Ariyanto
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
