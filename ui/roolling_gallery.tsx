@@ -82,18 +82,16 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
 
-  const handleUpdate = (latest: any) => {
-    if (typeof latest.rotateY === "number") {
-      rotation.set(latest.rotateY);
-    }
+  const handleUpdate = (latest: { rotateY: number }): void => {
+    rotation.set(latest.rotateY);
   };
 
-  const handleDrag = (_: any, info: PanInfo): void => {
+  const handleDrag = (_event: MouseEvent | TouchEvent, info: PanInfo): void => {
     controls.stop();
     rotation.set(rotation.get() + info.offset.x * dragFactor);
   };
 
-  const handleDragEnd = (_: any, info: PanInfo): void => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent, info: PanInfo): void => {
     const finalAngle = rotation.get() + info.velocity.x * dragFactor;
     rotation.set(finalAngle);
     if (autoplay) {

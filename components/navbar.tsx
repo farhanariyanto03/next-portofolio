@@ -1,57 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Home, Briefcase, Folder, Award, Mail, X, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Home, Briefcase, Folder, Award, Mail, X, Menu } from "lucide-react";
+
+const sections = [
+  { id: "home", name: "Home", icon: <Home size={16} className="mr-2" /> },
+  { id: "experience", name: "Experience", icon: <Briefcase size={16} className="mr-2" /> },
+  { id: "certificates", name: "Certificates", icon: <Award size={16} className="mr-2" /> },
+  { id: "portfolio", name: "Portfolio", icon: <Folder size={16} className="mr-2" /> },
+  { id: "gallery", name: "Gallery", icon: <Folder size={16} className="mr-2" /> },
+  { id: "contact", name: "Contact", icon: <Mail size={16} className="mr-2" /> },
+];
 
 const Navbar = () => {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  const links = [
-    { name: "Home", href: "#home", icon: <Home size={16} className="mr-2" /> },
-    {
-      name: "Experience",
-      href: "#experience",
-      icon: <Briefcase size={16} className="mr-2" />,
-    },
-    {
-      name: "Certificates",
-      href: "#certificates",
-      icon: <Award size={16} className="mr-2" />,
-    },
-    {
-      name: "Portfolio",
-      href: "#portfolio",
-      icon: <Folder size={16} className="mr-2" />,
-    },
-    {
-      name: "Gallery",
-      href: "#gallery",
-      icon: <Folder size={16} className="mr-2" />,
-    },
-    {
-      name: "Contact",
-      href: "#contact",
-      icon: <Mail size={16} className="mr-2" />,
-    },
-  ];
-
-  const isActive = (href: string) => pathname === href;
-
+  // Scroll state
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+
+      const offsets = sections.map((section) => {
+        const el = document.getElementById(section.id);
+        if (!el) return { id: section.id, offset: Infinity };
+        return { id: section.id, offset: Math.abs(el.getBoundingClientRect().top) };
+      });
+
+      const closestSection = offsets.reduce((a, b) => (a.offset < b.offset ? a : b));
+      setActiveSection(closestSection.id);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock scroll when mobile menu open
   useEffect(() => {
-    // Cegah scroll saat mobile menu terbuka
-    document.body.style.overflow = open ? "hidden" : "auto";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    }
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -74,19 +64,19 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-4">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span
-                  className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-500 cursor-pointer border-b-2 ${
-                    isActive(link.href)
-                      ? "text-white border-b-2 border-purple-500"
-                      : "text-gray-300 hover:text-white hover:border-purple-400 border-transparent"
-                  }`}
-                >
-                  {link.icon}
-                  {link.name}
-                </span>
-              </Link>
+            {sections.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 border-b-2 ${
+                  activeSection === link.id
+                    ? "text-white border-purple-500"
+                    : "text-gray-300 hover:text-white hover:border-purple-400 border-transparent"
+                }`}
+              >
+                {link.icon}
+                {link.name}
+              </a>
             ))}
           </div>
 
@@ -112,20 +102,20 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex flex-col p-4 space-y-3">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span
-                onClick={() => setOpen(false)}
-                className={`flex items-center px-3 py-2 rounded-md text-base font-medium transition-all ${
-                  isActive(link.href)
-                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-                    : "text-gray-300 hover:text-white hover:bg-gray-800"
-                }`}
-              >
-                {link.icon}
-                {link.name}
-              </span>
-            </Link>
+          {sections.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => setOpen(false)}
+              className={`flex items-center px-3 py-2 rounded-md text-base font-medium transition-all ${
+                activeSection === link.id
+                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800"
+              }`}
+            >
+              {link.icon}
+              {link.name}
+            </a>
           ))}
         </div>
       </div>
