@@ -7,9 +7,16 @@ export default function Experience() {
   // const containerRef = useRef(null);
   const experiences = [
     {
+      title: "Frontend Web Developer",
+      company: "PT. Meetaza Prawira Media",
+      period: "2025 - Now",
+      description:
+        "Fixing some display issues on Prime Hotel and Trehaus websites",
+    },
+    {
       title: "Fullstack Web Developer",
       company: "JTI Innovation",
-      period: "2024 - Now",
+      period: "2024 - 2025",
       description:
         "Building an E-Learning/LMS website for campus as a learning tool.",
     },
@@ -22,7 +29,7 @@ export default function Experience() {
     },
     {
       title: "Web Developer Intern",
-      company: "CV. Hummasoft Technolog",
+      company: "CV. Hummasoft Technology",
       period: "2021",
       description:
         "Building a website for a school that provides a Student Donation System (DOSIS) for those affected by disasters.",
